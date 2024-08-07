@@ -90,7 +90,7 @@
         android:layout_marginBottom="24dp"
         android:backgroundTint="#868686"
         android:fontFamily="sans-serif"
-        android:text="*"
+        android:text="X"
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"

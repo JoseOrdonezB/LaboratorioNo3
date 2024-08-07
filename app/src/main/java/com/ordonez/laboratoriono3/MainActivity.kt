@@ -11,7 +11,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Referencias a EditText y Botones
         val cuentaText: EditText = findViewById(R.id.cuentaText)
         val buttonOne: Button = findViewById(R.id.oneButton)
         val buttonTwo: Button = findViewById(R.id.twoButton)
@@ -36,104 +35,84 @@ class MainActivity : AppCompatActivity() {
 
         val calculator = Calculator()
 
-        // Configurar el evento de clic para el botón "Equal"
         buttonEqual.setOnClickListener {
-            val expression = cuentaText.text.toString()  // Obtener la expresión del EditText
+            val expression = cuentaText.text.toString()
             try {
-                val result = calculator.evaluate(expression)  // Evaluar la expresión
-                cuentaText.setText(result.toString())  // Mostrar el resultado en el EditText
+                val result = calculator.evaluate(expression)
+                cuentaText.setText(result.toString())
             } catch (e: Exception) {
-                cuentaText.setText("Error")  // Mostrar "Error" si hay una excepción
+                cuentaText.setText("Error")
             }
         }
 
-
-        // Configurar el evento de clic para el botón "1"
         buttonOne.setOnClickListener {
             cuentaText.append("1")
         }
 
-        // Configurar el evento de clic para el botón "2"
         buttonTwo.setOnClickListener {
             cuentaText.append("2")
         }
 
-        // Configurar el evento de clic para el botón "3"
         buttonThree.setOnClickListener {
             cuentaText.append("3")
         }
 
-        // Configurar el evento de clic para el botón "4"
         buttonFour.setOnClickListener {
             cuentaText.append("4")
         }
 
-        // Configurar el evento de clic para el botón "5"
         buttonFive.setOnClickListener {
             cuentaText.append("5")
         }
 
-        // Configurar el evento de clic para el botón "6"
         buttonSix.setOnClickListener {
             cuentaText.append("6")
         }
 
-        // Configurar el evento de clic para el botón "7"
         buttonSeven.setOnClickListener {
             cuentaText.append("7")
         }
 
-        // Configurar el evento de clic para el botón "8"
         buttonEight.setOnClickListener {
             cuentaText.append("8")
         }
 
-        // Configurar el evento de clic para el botón "9"
         buttonNine.setOnClickListener {
             cuentaText.append("9")
         }
 
-        // Configurar el evento de clic para el botón "0"
         buttonZero.setOnClickListener {
             cuentaText.append("0")
         }
 
-        // Configurar el evento de clic para el botón "+"
         buttonAdd.setOnClickListener {
             cuentaText.append("+")
         }
 
-        // Configurar el evento de clic para el botón "-"
         buttonSub.setOnClickListener {
             cuentaText.append("-")
         }
 
-        // Configurar el evento de clic para el botón "*"
         buttonMult.setOnClickListener {
             cuentaText.append("*")
         }
 
-        // Configurar el evento de clic para el botón "/"
         buttonDiv.setOnClickListener {
             cuentaText.append("/")
         }
 
-        // Configurar el evento de clic para el botón "^"
         buttonExp.setOnClickListener {
             cuentaText.append("^")
         }
 
-        // Configurar el evento de clic para el botón "√"
         buttonRaiz.setOnClickListener {
             cuentaText.append("√")
         }
 
-        // Configurar el evento de clic para el botón "("
         buttonLParent.setOnClickListener {
             cuentaText.append("(")
         }
 
-        // Configurar el evento de clic para el botón ")"
         buttonRParent.setOnClickListener {
             cuentaText.append(")")
         }
@@ -142,7 +121,6 @@ class MainActivity : AppCompatActivity() {
             val currentText = cuentaText.text.toString()
             if (currentText.isNotEmpty()) {
                 cuentaText.setText(currentText.dropLast(1))
-                // Mueve el cursor al final del texto
                 cuentaText.setSelection(cuentaText.text.length)
             }
         }
